@@ -1,0 +1,19 @@
+// C++ code
+//
+int ldr = A5;
+int ldr_value;
+int light=3;
+void setup()
+{
+  pinMode(light, OUTPUT);//to bulb
+  pinMode(ldr, INPUT);//light intensityfrom photoresistor./sunlight
+}
+
+void loop()
+{
+  ldr_value = analogRead(ldr);
+  if(ldr_value>512)
+    digitalWrite(light,LOW);//if there is sunlightwe switch off the light
+  else
+    digitalWrite(light,HIGH);//else we turn on 
+}
